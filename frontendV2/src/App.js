@@ -6,10 +6,10 @@ function App() {
   const [file, setFile] = useState(undefined)
   const [pgvalue, setPgvalue] = useState(undefined)
   const [perf,setPerf] = useState(undefined)
-  const [baseUrl,setBaseUrl] = useState(undefined)
   const [partsize,setPartsize] = useState(undefined)
   const [numuploads,setNumuploads] = useState(undefined)
   const [ta,setTa] = useState(undefined)
+  let baseUrl = "https://www.google.com";
 
   useEffect(() => {
     if (file) {
@@ -51,11 +51,7 @@ function App() {
     <div >
       <div style={{ backgroundColor: "#e2e2e2", padding: "20px", margin: "10px"}}>    
         <strong style={{display: "block"}}>Step 1 - Enter API URL</strong><br/>
-        <input type="text" id="urlinput" style={{width: "50%"}} placeholder="https://example.execute-api.example.amazonaws.com/example/" 
-               onChange={(e) => {
-                setBaseUrl(e.target?.value)
-               }}
-        />
+        <span>{baseUrl}</span>
       </div>  
       <div style={{ backgroundColor: "#e2e2e2", padding: "20px", margin: "10px"}}>
         <strong style={{display: "block"}}>Step 2 - Choose part size (MB)</strong><br/>
